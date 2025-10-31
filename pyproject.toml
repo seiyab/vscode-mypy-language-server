@@ -45,5 +45,6 @@ Repository = "https://github.com/seiyab/vscode-mypy-language-server"
 [tool.setuptools]
 packages = ["vscode_mypy_language_server"]
 
-[tool.setuptools.package-data]
-vscode_mypy_language_server = ["vscode-mypy/bundled/tool/*.py"]
+# Note: The language server code from the vscode-mypy submodule is not
+# packaged with pip installation. Users must clone the repository with
+# submodules or use the installation scripts instead.

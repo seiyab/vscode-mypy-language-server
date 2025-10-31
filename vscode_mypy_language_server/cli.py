@@ -1,6 +1,6 @@
 """Command-line interface for mypy language server."""
 
-import os
+import runpy
 import sys
 from pathlib import Path
 
@@ -24,12 +24,8 @@ def main():
     
     # Import and run the language server
     try:
-        # Read and execute the lsp_server.py file
-        with open(lsp_server_path, 'r') as f:
-            code = f.read()
-        
-        # Execute in the global namespace
-        exec(code, {'__name__': '__main__', '__file__': str(lsp_server_path)})
+        # Use runpy to execute the module safely
+        runpy.run_path(str(lsp_server_path), run_name='__main__')
     except Exception as e:
         print(f"Error running language server: {e}", file=sys.stderr)
         sys.exit(1)
