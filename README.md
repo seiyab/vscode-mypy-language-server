@@ -76,6 +76,19 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\Activate.ps1
 pip install -r vscode-mypy/requirements.txt
 ```
 
+## Testing the Installation
+
+After installation, you can verify everything is working correctly:
+
+```bash
+./test_server.sh
+```
+
+This script will:
+- Check that the language server script exists
+- Verify all dependencies are installed
+- Confirm the server can be started
+
 ## Usage
 
 ### Quick Start
