@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vscode-mypy-language-server"
+version = "0.1.0"
+description = "Mypy language server extracted from vscode-mypy"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Microsoft Corporation"}
+]
+keywords = ["mypy", "language-server", "lsp", "type-checking"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Text Editors :: Integrated Development Environments (IDE)",
+]
+
+dependencies = [
+    "mypy>=1.15.0",
+    "pygls>=1.3.1",
+    "packaging>=24.2",
+]
+
+[project.scripts]
+mypy-lsp = "vscode_mypy_language_server:main"
+
+[project.urls]
+Homepage = "https://github.com/seiyab/vscode-mypy-language-server"
+Repository = "https://github.com/seiyab/vscode-mypy-language-server"
+"Bug Tracker" = "https://github.com/seiyab/vscode-mypy-language-server/issues"
+"Source Code" = "https://github.com/microsoft/vscode-mypy"
+
+[tool.setuptools]
+packages = ["vscode_mypy_language_server"]
+
+# Note: The language server code from the vscode-mypy submodule is not
+# packaged with pip installation. Users must clone the repository with
+# submodules or use the installation scripts instead.
