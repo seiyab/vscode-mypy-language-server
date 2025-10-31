@@ -1,0 +1,3 @@
+[submodule "vscode-mypy"]
+	path = vscode-mypy
+	url = https://github.com/microsoft/vscode-mypy.git
